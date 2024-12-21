@@ -1,0 +1,74 @@
+graph TB
+
+    OSINT(OSINT TOOLS)
+    
+    %% Plataformas Integradas - GRIS
+    OSINT --> PI[Plataformas Integradas]
+    PI --> MAL[Maltego]
+    PI --> SPY[The_Spy_Job]
+    
+    %% Análisis de Personas - ROJO
+    OSINT --> AP[Análisis de Personas]
+    
+    %% Subgrupo Usuarios
+    AP --> BU[Búsqueda de Usuarios]
+    BU --> USER1[Sherlock]
+    BU --> USER2[WhatsMyName]
+    BU --> USER3[UserRecon]
+    BU --> USER4[NameCheckup]
+    BU --> USER5[Profiler]
+    BU --> USER6[LetMeSintYou.py]
+    
+    %% Subgrupo Números
+    AP --> NUM[Análisis de Números]
+    NUM --> NUM1[TrueCaller]
+    NUM --> NUM2[PhoneInfoga]
+    NUM --> NUM3[Sync.ME]
+    NUM --> NUM4[NumLookup]
+    NUM --> NUM5[FakeSms]
+    NUM --> NUM6[Phone Validator]
+    NUM --> NUM7[Phunter]
+    
+    %% Análisis Digital - VERDE y AZUL
+    OSINT --> AD[Análisis Digital]
+    
+    %% Subgrupo Email - VERDE
+    AD --> EM[Email]
+    EM --> EM1[Hunter.io]
+    EM --> EM2[Email-Format]
+    EM --> EM3[Epieos]
+    EM --> EM4[Email Finder]
+    EM --> EM5[Holehe]
+    EM --> EM6[Buster]
+    
+    %% Subgrupo Google - VERDE
+    AD --> GO[Google]
+    GO --> GO1[GHunt]
+    
+    %% Subgrupo Redes Sociales - AZUL
+    AD --> RS[Redes Sociales]
+    RS --> RSG[Análisis General]
+    RSG --> RSG1[Social Analyzer]
+    RSG --> RSG2[Social Searcher]
+    RSG --> RSG3[GeoSocial Footprint]
+    
+    RS --> RSI[Instagram]
+    RSI --> RSI1[Instaloader]
+    RSI --> RSI2[Instapy]
+    RSI --> RSI3[Toutatis]
+    
+    RS --> RST[Twitter]
+    RST --> RST1[Twint]
+
+    %% Definición de clases por colores
+    classDef gris fill:#f0f0f0,stroke:#333,stroke-width:2px
+    classDef rojo fill:#ffe6e6,stroke:#333,stroke-width:2px
+    classDef verde fill:#e6ffe6,stroke:#333,stroke-width:2px
+    classDef azul fill:#e6f3ff,stroke:#333,stroke-width:2px
+    classDef tool fill:#ffffff,stroke:#333,stroke-width:1px
+    
+    %% Asignación de colores
+    class PI,MAL,SPY gris
+    class AP,BU,NUM,USER1,USER2,USER3,USER4,USER5,USER6,NUM1,NUM2,NUM3,NUM4,NUM5,NUM6,NUM7 rojo
+    class EM,GO,EM1,EM2,EM3,EM4,EM5,EM6,GO1 verde
+    class RS,RSG,RSI,RST,RSG1,RSG2,RSG3,RSI1,RSI2,RSI3,RST1 azul
